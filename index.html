@@ -1,0 +1,133 @@
+<html>
+
+<head>
+    <title>Air Java - Book Flights</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <h1>Air Java</h1>
+            <img src="airjava.jpeg">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" id="book-btn">Book</a></li>
+                <li><a href="#" id="check-in-btn">Track status</a></li>
+                <li><a href="#" id="contact-us-btn">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="book-flights" class="page-section">
+            <div class="image-container">
+                <img src="airr.jpeg" class="left-image">
+                <form action="#" method="post">
+                    <h2>Book Flights</h2>
+                    <label for="trip-type">Trip Type:</label>
+                    <select name="trip-type" id="trip-type">
+                        <option value="One-Way">One Way</option>
+                        <option value="Round-Trip">Round Trip</option>
+                    </select>
+
+                    <label for="passengers">Passengers:</label>
+                    <select name="passengers" id="passengers">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+
+                    <label for="date">Travel Date:</label>
+                    <input type="date" id="date" placeholder="MM/DD/YYYY">
+
+                    <div id="return-date-container" style="display: none;">
+                        <label for="return-date">Return Date:</label>
+                        <input type="date" id="return-date" placeholder="MM/DD/YYYY">
+                    </div>
+
+                    <label for="origin">Origin:</label>
+                    <input type="text" id="origin" name="origin" list="origin-datalist" placeholder="Enter origin">
+                    <datalist id="origin-datalist"></datalist>
+
+                    <label for="destination">Destination:</label>
+                    <input type="text" id="destination" name="destination" list="destination-datalist"
+                        placeholder="Enter destination">
+                    <datalist id="destination-datalist"></datalist>
+
+                    <button type="submit" id="flight-btn">Search Flights</button>
+                    <div id="loadingPage"
+                        style="display: none; position: fixed; top: 0; left: 0; height: 100%; width: 100%; background: rgba(255, 255, 255, 0.8); z-index: 1000;">
+                        <div id="planeContainer"
+                            style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                            <img src="plane-loading (1).png"
+                                style="width: 100px; height: auto; animation: flyIn 2s forwards;">
+                        </div>
+                    </div>
+                </form>
+                <img src="travel-sales.gif" class="right-image">
+            </div>
+        </section>
+
+        <section id="flight-results" class="page-section">
+            <h2>Available Flights</h2>
+            <div id="booking-details"></div>
+            <div id="flight-results-container"></div>
+            <div id="return-flight-results-container" style="display:none;"></div>
+        </section>
+
+
+        <section id="check-in" class="page-section">
+            <div class="image-container">
+                <img src="airr.jpeg" class="left-image">
+                <form action="#" method="post">
+                    <h2>Track your flight</h2>
+                    <label for="booking-id">Flight ID:</label>
+                    <input type="text" id="booking-id">
+                    <label for="detail">Last Name/Email Address:</label>
+                    <input type="text" id="customer-name">
+                    <button id="check-in-submit-btn">Search</button>
+                </form>
+                <img src="travel-sales.gif" class="right-image">
+            </div>
+        </section>
+    </main>
+
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Contact Us<br><br></h2>
+            <p>Phone: +91 99459 78129</p>
+            <p>Email: support.airjava.com</p>
+            <form aria-placeholder="Any query could be addressed here :)">
+                <p style="text-align: left;">Message</p>
+                <textarea style="height: 200px; width: 900px; align-items: center; "> </textarea>
+                
+            </form>
+            <form>
+                <input type="submit">
+            </form>
+            
+        </div>
+    </div>
+
+    <div id="check-in-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Check-In</h2>
+            <p id="check-in-message"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
